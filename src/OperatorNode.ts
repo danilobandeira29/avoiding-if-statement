@@ -1,8 +1,16 @@
 import { CreateNode } from "./CreateNode";
+import { ValueNode } from './ValueNode'
 
 export abstract class OperatorNode extends CreateNode {
-  constructor(operator: string, left: OperatorNode, right: OperatorNode) {
-    super(0, operator, left, right)
+  operator: string
+  left: ValueNode | OperatorNode
+  right: ValueNode | OperatorNode
+
+  constructor(operator: string, left: ValueNode | OperatorNode, right: ValueNode | OperatorNode) {
+    super()
+    this.operator = operator
+    this.left = left
+    this.right = right
   }
 
   abstract evaluate(): number
