@@ -1,4 +1,4 @@
-export class CreateNode {
+export abstract class CreateNode {
   value: number
   operator: string
   left: CreateNode | null
@@ -17,20 +17,5 @@ export class CreateNode {
     this.right = right
   }
 
-  evaluate(): number {
-    switch(this.operator) {
-      case '#':
-        return this.value
-      case '+':
-        if(this.left && this.right) {
-          return this.left.evaluate() + this.right.evaluate()
-        }
-      case '*':
-        if(this.left && this.right) {
-          return this.left.evaluate() * this.right.evaluate()
-        } 
-      default:
-        return 0
-    }
-  }
+  abstract evaluate(): number
 }
