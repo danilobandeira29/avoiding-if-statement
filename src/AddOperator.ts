@@ -1,7 +1,8 @@
 import { OperatorNode } from "./OperatorNode";
+import { ValueNode } from './ValueNode'
 
 export class AddOperator extends OperatorNode {
-  constructor(left: OperatorNode, right: OperatorNode) {
+  constructor(left: ValueNode | OperatorNode, right: ValueNode | OperatorNode) {
     super('+', left, right)
   }
 
