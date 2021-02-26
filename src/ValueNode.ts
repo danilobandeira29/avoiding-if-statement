@@ -1,8 +1,11 @@
 import { CreateNode } from "./CreateNode"
 
 export class ValueNode extends CreateNode {
+  value: number
+
   constructor(value: number) {
-    super(value, '#', null, null)
+    super()
+    this.value = value
   }
 
   evaluate(): number {
